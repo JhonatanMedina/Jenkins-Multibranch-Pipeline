@@ -4,7 +4,7 @@
 pipeline {
 	agent any
 		stages {
-			stage('First') {
+			stage('One') {
 				steps {
 					sh '''
 						echo "Step One"
@@ -13,7 +13,7 @@ pipeline {
 			}
 
 
-			stage('Second') {
+			stage('Two') {
 				steps {
 					sh '''
 						echo "Step Two"
@@ -21,7 +21,7 @@ pipeline {
 				}
 			} 
 
-			stage('Third') {
+			stage('Three') {
 				steps {
 					sh '''
 						echo "Step Three"
