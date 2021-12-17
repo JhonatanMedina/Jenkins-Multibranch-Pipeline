@@ -3,9 +3,13 @@
 
 pipeline {
 	agent any
+	environment {
+       	 EXECUTE = "true"
+   	}
 		stages {
-			stage('One') {
+			stage('First') {
 				steps {
+					echo "${execute}
 					sh '''
 						echo "Step One"
 					'''
@@ -13,15 +17,19 @@ pipeline {
 			}
 
 
-			stage('Two') {
+			stage('Second') {
+				when {
+					environment name: "execute" , value: "true"	
+				}
+				
 				steps {
 					sh '''
-						echo "Step Two"
+						echo "Updating Second Stage"
 					'''
 				}
 			} 
 
-			stage('Three') {
+			stage('Third') {
 				steps {
 					sh '''
 						echo "Step Three"
