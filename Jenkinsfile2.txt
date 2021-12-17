@@ -1,7 +1,6 @@
 # Jenkins-Multibranch-Pipeline2
 
 
-
 pipeline {
 	agent any
 		stages {
@@ -31,4 +30,6 @@ pipeline {
 			}
 		}
 }
+
+
 
